@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 
@@ -15,6 +16,12 @@ export default function Home() {
           Explore Countries
         </button>
       </Link>
+      {/* <Image 
+        src="https://cdn.pixabay.com/photo/2025/08/24/17/00/akbarnemati-astronomy-9794338_960_720.jpg" 
+        alt=""
+        width={300}
+        height={200}
+        /> */}
     </div>
   );
 }

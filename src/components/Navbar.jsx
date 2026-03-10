@@ -1,6 +1,13 @@
+'use client'
+
 import Link from "next/link"
+import { useFavorites } from "@/context/FavoritesContext"
+
 
 const Navbar = () => {
+
+    const { favorites } = useFavorites()
+
   return (
     <nav className="flex items-center justify-between px-8 py-4 bg-black text-white">
        <Link href='/'>
@@ -16,9 +23,11 @@ const Navbar = () => {
                 Countries
             </Link>
 
-            <div className="bg-white text-black rounded-2xl px-3 py-1">
-                Favorites : 
-            </div>
+            <Link href='/favorites'>
+                <div className="bg-white text-black rounded-2xl px-3 py-1">
+                    Favorites : {favorites.length}
+                </div>
+            </Link>
         </div>
     </nav>
   )

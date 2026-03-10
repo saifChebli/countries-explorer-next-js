@@ -26,7 +26,7 @@ const CountryDetails = async ({ params }) => {
             <p className="text-gray-600 font-semibold">Region : {country.region}</p>
             <p className="text-gray-600 font-semibold">Capital : {country.capital}</p>
             <div className="mt-4">
-                <FavoriteButton />
+                <FavoriteButton selectedCountry={country} />
             </div>
         </div>
     )

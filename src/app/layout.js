@@ -1,3 +1,4 @@
+import { FavoritesProvider } from "@/context/FavoritesContext";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
@@ -12,8 +13,10 @@ export default function RootLayout({ children }) {
       <body
         className={`antialiased`}
       >
-        <Navbar />
-        {children}
+        <FavoritesProvider>
+          <Navbar />
+          {children}
+        </FavoritesProvider>
       </body>
     </html>
   );

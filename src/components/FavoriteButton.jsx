@@ -1,12 +1,21 @@
 'use client'
 
-const FavoriteButton = () => {
+import { useFavorites } from "@/context/FavoritesContext"
+
+const FavoriteButton = ({selectedCountry}) => {
+
+const { favorites , addToFavorites } = useFavorites()
+  
+
+  const isFavorite = favorites.includes(selectedCountry) // true or false
+
   return (
     <button
-        onClick={() => console.log('Clicked !')}
+        disabled={isFavorite}
+        onClick={() => addToFavorites(selectedCountry)}
         className="bg-green-500 text-white px-4 py-2 rounded cursor-pointer"
     >
-        Add to Favorites
+       {isFavorite ? 'Added ✅' : 'Add to Favorites'} 
     </button>
   )
 }
